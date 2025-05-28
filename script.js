@@ -21,6 +21,23 @@ document.addEventListener('scroll', () => {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
+    
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+
+    menuToggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+
+   
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('active');
+        });
+    });
+
+  
     const projectList = document.getElementById('project-list');
     const username = 'DEVsavin';
 
